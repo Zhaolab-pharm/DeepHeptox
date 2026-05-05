@@ -2,24 +2,20 @@
 
 **An Interpretable Deep Learning Model for Multi-Endpoint Hepatotoxicity Prediction of Chemical Compounds**
 
-DeepHeptox uses a Graph Attention Network (GAT) to predict hepatotoxicity from molecular SMILES strings. Atoms are encoded as node features and molecular topology is used as the graph structure.
-
-\---
-
 ## Project Structure
 
 ```
 .
-├── train\\\_test.py       # Main training \\\\\\\\\\\\\\\& test evaluation script
+├── train_test.py       # Main training& test evaluation script
 ├── 5cv.py              # 5-fold cross-validation script
 ├── model.py            # GATNet model definition
 ├── dataset.py          # MolDataset: loads CSV and builds graphs
 ├── featurizer.py       # Atom-level molecular featurization
-├── evaluate.py         # Evaluation metrics (ACC, AUC, SE, SP, F1)
+├── evaluate.py         # Evaluation metrics
 ├── seed.py             # Reproducibility utility
 ├── utils.py            # One-hot encoding helper
-├── train\\\_hepatitis.csv # Training data (SMILES + label)
-└── test\\\_hepatitis.csv  # Test data (SMILES + label)
+├── train_hepatitis.csv # Training data (SMILES + label)
+└── test_hepatitis.csv  # Test data (SMILES + label)
 ```
 
 \---
@@ -29,14 +25,12 @@ DeepHeptox uses a Graph Attention Network (GAT) to predict hepatotoxicity from m
 ```bash
 pip install torch torch-geometric rdkit-pypi scikit-learn pandas tqdm scipy
 ```
-
-> Make sure your PyTorch and PyG versions are compatible. Refer to the \\\\\\\\\\\\\\\[PyG installation guide](https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html) for your CUDA version.
-
+Our model is implemented using PyTorch 2.8.0 and PyTorch Geometric 2.6.1, and trained on a single NVIDIA GPU.
 \---
 
 ## Data Format
 
-Both `train\\\_hepatitis.csv` and `test\\\_hepatitis.csv` must contain the following two columns:
+Both `train_hepatitis.csv` and `test_hepatitis.csv` must contain the following two columns:
 
 |smiles|label|
 |-|-|
@@ -44,15 +38,15 @@ Both `train\\\_hepatitis.csv` and `test\\\_hepatitis.csv` must contain the follo
 |c1ccccc1|0|
 
 * `smiles`: canonical SMILES string of the molecule
-* `label`: binary label (`1` = hepatotoxic, `0` = non-hepatotoxic)
+* `label`: binary label (`1` = positive, `0` = negative)
 
 \---
 
 ## Training \& Testing
 
-Run `train\\\\\\\\\\\\\\\_test.py` to train the model on `train\\\\\\\\\\\\\\\_hepatitis.csv` and evaluate on `test\\\\\\\\\\\\\\\_hepatitis.csv`:
+Run `train_test.py` to train the model on `train_hepatitis.csv` and evaluate on `test_hepatitis.csv`:
 
 ```bash
-python train\\\\\\\\\\\\\\\_test.py
+python train_test.py
 ```
 
