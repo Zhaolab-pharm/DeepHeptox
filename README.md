@@ -16,7 +16,7 @@ conda install pandas=2.3.0
 ```
 
 ```bash
-pip install torch==2.8.0```
+pip install torch==2.8.0
 ```
 
 ```bash
