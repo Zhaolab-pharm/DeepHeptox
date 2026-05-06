@@ -2,6 +2,39 @@
 
 **An Interpretable Deep Learning Model for Multi-Endpoint Hepatotoxicity Prediction of Chemical Compounds**
 
+## Environment Setup
+```bash
+conda create -n DeepHeptox python=3.13 -y
+```
+
+```bash
+conda activate DeepHeptox
+```
+
+```bash
+conda install pandas=2.3.0
+```
+
+```bash
+pip install torch==2.8.0```
+```
+
+```bash
+pip install torch-scatter==2.1.2 \
+            torch-sparse==0.6.18 \
+            torch-cluster==1.6.3 \
+            torch-spline-conv==1.2.2 \
+            torch-geometric==2.6.1
+```
+
+```bash
+conda install rdkit=2025.03.6
+```
+
+```bash
+conda install scikit-learn=1.7.2
+```
+
 ## Project Structure
 
 ```
