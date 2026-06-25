@@ -38,7 +38,6 @@ conda install scikit-learn=1.7.2
 ## Project Structure
 
 ```
-.
 ├── train_test.py       # Main training& test evaluation script
 ├── 5cv.py              # 5-fold cross-validation script
 ├── model.py            # GATNet model definition
@@ -53,13 +52,6 @@ conda install scikit-learn=1.7.2
 
 \---
 
-## Requirements
-
-```bash
-pip install torch torch-geometric rdkit-pypi scikit-learn pandas tqdm scipy
-```
-Our model is implemented using PyTorch 2.8.0 and PyTorch Geometric 2.6.1, and trained on a single NVIDIA GPU.
-\---
 
 ## Data Format
 
